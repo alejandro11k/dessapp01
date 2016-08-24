@@ -1,8 +1,11 @@
-{
-  "language": "java",
-  "group": "stable",
-  "dist": "precise",
-  "os": "linux"
-}
-
-
+language: java
+sudo: required
+jdk:
+- oraclejdk8
+install:
+- mvn install -Dmaven.compiler.target=1.8 -Dmaven.compiler.source=1.8
+deploy:
+  provider: heroku
+  api_key:
+    secure: P08E1k+tVLYeEbFKFjsecYvhvlW+XaYKjr2lAFM8muh6TyEFEuc7+y2ho2ES5e9YxKEUBGoWmNCTQfZGFn3UGHnBKWqIQ6eYdcLWax+CMQe/m7k9hJ8qUPqbsd/uGhTQg+/fZ4ukE9bR6/8Il95OJotuoR+ypN3zPbQ4jWj55dYh8h3XzoBdg3YCaUTaKPsWmvDusjZW6LO3eCQ9hUb0MaVZKCwnJT7KHcrXimsYnO8DGXPHQ6R/jB1paHvlsixWvZK0IHAx0+CzWtwYqF4g/Q+8L1mE0gRU/DZlNYzyhTV9TpnH3lZUbXjAfGxGRQIh44YsI8HEalzhRUp4pyXpEwvO54tKiunLP1Di9Kcg+RxT2hBdiOI1VoCfVdd1yYsbyvjWKlEA28t88wNg6go6AZmEzYqVN8Ru98TC7ZIxKu71uDbcIjdmDTqiJYnkxJcFoK2kWgjo4RgG3mNVYodls972SFFd02wmOwM0EeQ+c7pggN8gvfI1/0o/JnR9rtcHJM+UzGYBiAzB+UhhUa1t1tq4ZcuId388SfiR76f7nj79VosgPkcncdzzYR9SQgvjlET5hivt/6yvE/ndpRLu6mNUXMVwR5BlZ9NcXmEF8rM0iVHg+PSoOXUtp4e/coBtfGsHGcH+6GkNE0IBc1xEvvNg+iUrCSD+5IqhfL+LCFk=
+    app: dessapp01
